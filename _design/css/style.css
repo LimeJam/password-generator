@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url("/_design/fonts/League_Gothic-webfont.eot?") format('eot'),
+url("/_design/fonts/League_Gothic-webfont.woff") format('woff'),
+url("/_design/fonts/League_Gothic-webfont.ttf") format('truetype'),
+url("/_design/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  background-color: #000000;
+  background-image: url(/_design/images/fabric_img.jpg);
+ background-attachment: fixed;
+}
+
+h1 {
+  font-family: LeagueGothicRegular;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  display: block;
+  width: 705px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.sec_tips {
+  height: 180px;
+  margin: 30px;
+  display: block;
+  text-align: center;
+  padding: 2em 2em 2em 2em;
+  color: #000000;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px 5px;
+}
+
+.sec_tips h2 {
+  font-family: LeagueGothicRegular;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.sec_tips p {
+  padding: 1em;
+}
+
+#genbtn {
+  border: 1px solid #222222;
+  cursor: pointer;
+  width: 220px;
+  height: 152px;
+  display: block;
+  margin: 0 0 2em 0;
+  background-color: #222222;
+  float: left;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  
+  background-image: url(/_design/images/password.png);
+  background-repeat: no-repeat;
+  background-position: 0 44px;
+}
+
+#genbtn:hover {
+  background-position: 0 -70px!important;
+}
+
+#genbtn span {
+  display: block;
+  font-size: 2em;
+  line-height: 100%;
+  text-align: right;
+  font-family: LeagueGothicRegular;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 1em;
+}
+
+.txt_password {
+  width: 420px;
+  height: 150px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.8em;
+  color: #ffffff;
+  display: block;
+  overflow-x: hidden;
+  float: left;
+  border: 1px solid #222222;
+  padding: 0 0.5em 0 1em;
+  background-color: #9ede00;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.txt_password::selection {
+  background: #000000;
+  color: #ffffff;
+}
+select {background-color:#dfdfdf;}
+#pgLength {
+  width: 120px;
+  font-family: LeagueGothicRegular;
+  font-size: 2em;
+  margin: 2px;
+}
+#pgLength optgroup {font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:1em!important;}
+.chboxl {
+  display: inline;
+  text-align: left;
+  float: left;
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  height: 27px;
+}
+
+.chboxr {
+  display: inline;
+  text-align: left;
+  float: left;
+  width: 580px;
+  margin: 0;
+  padding: 0;
+  height: 27px;
+}
+.tall {height:60px;}
+#genbtn:hover {
+  background-position: 0 -38px;
+}
+
+#genbtn:active {
+  background-position: 0 -76px;
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
+
+#sec_options {
+  width: 800px;
+  margin: 0 0 10px 0;
+  padding: 2px 50px 2px 5px;
+}
