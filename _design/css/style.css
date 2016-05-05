@@ -11,8 +11,7 @@ url("/_design/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg'
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 14px;
-  background-color: #000000;
-  background-image: url(/_design/images/fabric_img.jpg);
+  background-color: #333333;
  background-attachment: fixed;
 }
 
