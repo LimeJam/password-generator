@@ -9,15 +9,19 @@
     <meta name="keywords" content="Secure Password Generator, Password Creator, Online Password Generator, Random Password Generator, Strong Password Generator, Create Password, Generate Password, Make Password ">	
     <link rel="stylesheet" type="text/css" href="/_design/css/style.css" />	
     <link rel="image_src" href="/_design/images/thumbnail.png" />
-    <script type="text/javascript" src="/_design/js/functions.js?=2"></script>
+    <!--<script type="text/javascript" src="/_design/js/functions.js?=2"></script>-->
+    <script type="text/javascript" src="/_design/js/premutatio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+
 </head>
 
 
-<body onload="OIU()">
+<body onload="setPwd();">
 <div class="container" >
 	<div id="sec_btn">
-        <button id="genbtn" type="submit" onclick="d2O();"><span>Generate<br/>Secure<br />Password</span></button>
-        <input name="final_pass" id="final_pass" type="text" size="75" value="Your new password will be shown here." class="txt_password" onclick="s_('final_pass');">
+        <button id="genbtn" type="submit" onclick="setPwd();"><span>Generate<br/>Secure<br />Password</span></button>
+        <input name="final_pass" id="final_pass" type="text" size="75" value="Your new password will be shown here." class="txt_password" onclick="this.setSelectionRange(0, this.value.length);">
+        <button class="copytoclipboard" data-clipboard-target="#final_pass"><img src="/_design/images/clippy.svg" alt="Copy to clipboard" width="150"></button>
 	</div><!-- sec_btn -->
     <div class="clear"></div>
 
@@ -26,7 +30,7 @@
 
     <div class="chboxl tall ">Password Length:</div>
     <div class="chboxr tall ">
-        <select id="pgLength" title="Select the length of your password." onclick="S7P( false );">
+        <select id="pgLength" title="Select the length of your password.">
             <optgroup label="Weak">
                 <option value="12">12</option>
                 <option value="13">13</option>
@@ -34,7 +38,7 @@
                 <option value="15">15</option>
             </optgroup>
             <optgroup label="Strong">
-                <option value="16">16</option>
+                <option value="16" selected="selected">16</option>
                 <option value="17">17</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
@@ -66,25 +70,26 @@
     </div>
 		
     <div class="chboxl">Include Lowercase:</div>
-    <div class="chboxr"><label><input type="checkbox" name="Lowercase" id="Lowercase" onclick="S7P( false );">( e.g. abcdefgh )</label></div>
+    <div class="chboxr"><label><input type="checkbox" name="Lowercase" id="Lowercase" checked>( e.g. abcdefgh )</label></div>
 
     <div class="chboxl">Include Uppercase:</div>
-    <div class="chboxr"><label><input type="checkbox" name="Uppercase" id="Uppercase" onclick="S7P( false );">( e.g. ABCDEFGH )</label></div>
+    <div class="chboxr"><label><input type="checkbox" name="Uppercase" id="Uppercase" checked>( e.g. ABCDEFGH )</label></div>
  
     <div class="chboxl">Include Numbers:</div>
-    <div class="chboxr"><label><input type="checkbox" name="Numbers" id="Numbers" onclick="S7P( false );">( e.g. 123456 )</label></div>
+    <div class="chboxr"><label><input type="checkbox" name="Numbers" id="Numbers" checked>( e.g. 123456 )</label></div>
     			
     <div class="chboxl">Include Symbols:</div>
-    <div class="chboxr"><label><input type="checkbox" name="Symbols" id="Symbols" onclick="S7P( false );">( e.g. @#$% )</label></div>
+    <div class="chboxr"><label><input type="checkbox" name="Symbols" id="Symbols" checked>( e.g. @#$% )</label></div>
 		
-    <div class="chboxl">Exclude Alike:</div>
-    <div class="chboxr"><label><input type="checkbox" name="Nosimilar" id="Nosimilar" onclick="S7P( false );">( e.g. i, l, 1, L, o, 0, O )</label></div>
+    <div class="chboxl">Include Alike:</div>
+    <div class="chboxr"><label><input type="checkbox" name="Alike" id="Alike">( e.g. i, l, 1, L, o, 0, O )</label></div>
 		
-    <div class="chboxl">Exclude Ambiguous:</div>
-    <div class="chboxr"><label><input type="checkbox" name="NoAmb" id="NoAmb" onclick="S7P( false );">( { } [ ] ( ) / \ ' " ` ~ , ; : . < > )</label></div>			
+    <div class="chboxl">Include Ambiguous:</div>
+    <div class="chboxr"><label><input type="checkbox" name="Ambiguous" id="Ambiguous">( { } [ ] ( ) / \ ' " ` ~ , ; : . < > )</label></div>			
 		
 	</div><!-- sec_options -->
-
+    <script>new Clipboard('.copytoclipboard');</script>
+    
     <div class="clear"></div>
 
     </div><!-- container -->

@@ -9,7 +9,6 @@ url("/_design/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg'
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 14px;
   background-color: #333333;
  background-attachment: fixed;
@@ -32,30 +31,6 @@ h1 {
   background-color: #ffffff;
   padding: 20px;
   margin-bottom: 10px;
-}
-
-.sec_tips {
-  height: 180px;
-  margin: 30px;
-  display: block;
-  text-align: center;
-  padding: 2em 2em 2em 2em;
-  color: #000000;
-  border: 1px solid #dfdfdf;
-  border-radius: 5px 5px;
-}
-
-.sec_tips h2 {
-  font-family: LeagueGothicRegular;
-  font-size: 2em;
-  text-transform: uppercase;
-  font-weight: normal;
-  padding: 0;
-  margin: 0;
-}
-
-.sec_tips p {
-  padding: 1em;
 }
 
 #genbtn {
@@ -135,8 +110,11 @@ select {background-color:#dfdfdf;}
   padding: 0;
   height: 27px;
 }
-
+.chboxl {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 .chboxr {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: inline;
   text-align: left;
   float: left;
