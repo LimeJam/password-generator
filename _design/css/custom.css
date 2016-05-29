@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'LeagueGothicRegular';
+  src: url("/_design/fonts/League_Gothic-webfont.eot?") format('eot'),
+url("/_design/fonts/League_Gothic-webfont.woff") format('woff'),
+url("/_design/fonts/League_Gothic-webfont.ttf") format('truetype'),
+url("/_design/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.top-buffer { margin-top:2em; }
+
+.btn-group > .input-group {
+    float: left;
+}
+.tall {
+    height: 150px!important;
+}
+#genbtn {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+#final_pass {
+    font-family: Georgia;
+    font-size: 48px;
+}
+.txt_password::selection {
+  background: #000000;
+  color: #ffffff;
+}
+select {background-color:#dfdfdf;}
