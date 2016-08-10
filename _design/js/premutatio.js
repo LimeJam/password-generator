@@ -1,33 +1,35 @@
-function premutatio() {
+var pgLength = document.getElementById("pgLength").value;
+
+var Lowercase = 0;
+if (document.getElementById("Lowercase").checked) {
+    Lowercase = 1
+}
+var Uppercase = 0;
+if (document.getElementById("Uppercase").checked) {
+    Uppercase = 1
+}
+var Numbers = 0;
+if (document.getElementById("Numbers").checked) {
+    Numbers = 1
+}
+var Symbols = 0;
+if (document.getElementById("Symbols").checked) {
+    Symbols = 1
+}
+var Alike = 0;
+if (document.getElementById("Alike").checked) {
+    Alike = 1
+}
+var Ambiguous = 0;
+if (document.getElementById("Ambiguous").checked) {
+    Ambiguous = 1
+}
+
+function premutatio(pgLength,Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous) {
     var premutatio = "";
     var dictionary = "";
 
-    var pgLength = document.getElementById("pgLength").value;
 
-    var Lowercase = 0;
-    if (document.getElementById("Lowercase").checked) {
-        Lowercase = 1
-    }
-    var Uppercase = 0;
-    if (document.getElementById("Uppercase").checked) {
-        Uppercase = 1
-    }
-    var Numbers = 0;
-    if (document.getElementById("Numbers").checked) {
-        Numbers = 1
-    }
-    var Symbols = 0;
-    if (document.getElementById("Symbols").checked) {
-        Symbols = 1
-    }
-    var Alike = 0;
-    if (document.getElementById("Alike").checked) {
-        Alike = 1
-    }
-    var Ambiguous = 0;
-    if (document.getElementById("Ambiguous").checked) {
-        Ambiguous = 1
-    }
     if (Lowercase==1) {dictionary+="abcdefghjkmnpqrstuvwxyzabcdefghjkmnpqrstuvwxyz";}
     if (Uppercase==1) {dictionary+="ABCDEFGHJKLMNPQRSTUVWXYZABCDEFGHJKLMNPQRSTUVWXYZ";}
     if (Numbers==1) {dictionary+="234567892345678923456789234567892345678923456789";}
@@ -45,5 +47,5 @@ function premutatio() {
     return premutatio
 }
 function setPwd() {
-    document.getElementById("final_pass").value = premutatio();
+    document.getElementById("final_pass").value = premutatio(pgLength,Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous);
 }
