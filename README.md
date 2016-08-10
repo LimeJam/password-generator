@@ -6,7 +6,7 @@ LimeJam Password Generator is the simple dictionary premutation script, <a href=
 * Numbers: **23456789**
 * Symbols: **!#$%&*+-=?@^_**
 * Alike: **ilo|IO01**
-* Ambiguous: **{}\[]()\'\"`~,;:/.<>\\**
+* Ambiguous: **{}[]()'"`~,;:/.<>\**
 
 To use the Password Generator, simply add the **premutatio.js** to your project and use premutatio(pgLength,dictionary) function, supplying it with desired password length and dictionary string respectively.
 
