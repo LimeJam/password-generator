@@ -8,9 +8,9 @@
 	<meta name="description" content="Generate Secure Password for your accounts online."> 
     <meta name="keywords" content="Secure Password Generator, Password Creator, Online Password Generator, Random Password Generator, Strong Password Generator, Create Password, Generate Password, Make Password ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/_design/css/custom.css" />
-    <link rel="image_src" href="/_design/images/thumbnail.png" />
-    <script type="text/javascript" src="/_design/js/premutatio.js"></script>
+    <link rel="stylesheet" type="text/css" href="/src/css/custom.css" />
+    <link rel="image_src" href="/src/images/thumbnail.png" />
+    <script type="text/javascript" src="/src/js/premutatio.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
 </head>
 
@@ -21,7 +21,7 @@
 
         <div class="input-group-btn">
             <button id="genbtn" type="button" class="btn btn-default tall" onclick="setPwd();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Generate</button>
-            <button class="copytoclipboard btn btn-default tall" type="button" data-clipboard-target="#final_pass">Copy <img src="/_design/images/clippy.svg" width="16"></button>
+            <button class="copytoclipboard btn btn-default tall" type="button" data-clipboard-target="#final_pass">Copy <img src="/src/images/clippy.svg" width="16"></button>
         </div>
         
         <input name="final_pass" id="final_pass" type="text" value="Your new password will be shown here." class="txt_password form-control tall" onclick="this.setSelectionRange(0, this.value.length);">
