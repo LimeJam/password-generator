@@ -1,5 +1,6 @@
 # LimeJam Password Generator
 LimeJam Password Generator is the simple dictionary premutation script, <a href="https://password.limejam.com/">available</a> online to generate strong passwords for any online account types. Currenty the dictionary consist of the following blocks: 
+
 * Lowercase: **abcdefghjkmnpqrstuvwxyz**
 * Uppercase: **ABCDEFGHJKLMNPQRSTUVWXYZ**
 * Numbers: **23456789**
