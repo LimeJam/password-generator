@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'LeagueGothicRegular';
-  src: url("/_design/fonts/League_Gothic-webfont.eot?") format('eot'),
-url("/_design/fonts/League_Gothic-webfont.woff") format('woff'),
-url("/_design/fonts/League_Gothic-webfont.ttf") format('truetype'),
-url("/_design/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg');
+  src:url("/src/fonts/League_Gothic-webfont.eot?") format('eot'),
+      url("/src/fonts/League_Gothic-webfont.woff") format('woff'),
+      url("/src/fonts/League_Gothic-webfont.ttf") format('truetype'),
+      url("/src/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg');
   font-weight: normal;
   font-style: normal;
 }
