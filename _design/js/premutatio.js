@@ -25,8 +25,9 @@ if (document.getElementById("Ambiguous").checked) {
     Ambiguous = 1
 }
 
-function premutatio(pgLength,Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous) {
-    var premutatio = "";
+var dictionary = dictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous);
+
+function dictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous) {
     var dictionary = "";
 
 
@@ -37,15 +38,19 @@ function premutatio(pgLength,Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous
     if (Alike==1) {dictionary+="ilo|IO01ilo|IO01ilo|IO01ilo|IO01ilo|IO01ilo|IO01ilo|IO01";}
     if (Ambiguous==1) {dictionary+="{}[]()\/'\"`~,;:.<>\\{}[]()\/'\"`~,;:.<>\\{}[]()\/'\"`~,;:.<>\\"}
 
-    // if no character set is selected
-    if (Lowercase+Uppercase+Numbers+Symbols+Alike+Ambiguous == 0) {return "Please select at least one character set"}
+    return dictionary
+}
+
+function premutatio(pgLength,dictionary) {
+    var premutatio = "";
 
     for (i = 0; i < pgLength; i++) {
         premutatio+=dictionary[Math.floor(Math.random() * dictionary.length)];
     }
-
+    // if no character set is selected
+    if (dictionary == '') {return "Please select at least one character set"}
     return premutatio
 }
 function setPwd() {
-    document.getElementById("final_pass").value = premutatio(pgLength,Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous);
+    document.getElementById("final_pass").value = premutatio(pgLength,dictionary);
 }
