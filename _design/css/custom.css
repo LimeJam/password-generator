@@ -7,7 +7,7 @@ url("/_design/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg'
   font-weight: normal;
   font-style: normal;
 }
-
+body{background-color: #000000; color: #000000;}
 .top-buffer { margin-top:2em; }
 
 .btn-group > .input-group {
@@ -16,16 +16,54 @@ url("/_design/fonts/League_Gothic-webfont.svg#LeagueGothicRegular") format('svg'
 .tall {
     height: 150px!important;
 }
+.btn.tall {
+    background-color: #b6ff00;
+    font-family: 'LeagueGothicRegular';
+    text-transform: uppercase;
+    /*z-index: 2!important;*/
+}
+.btn.tall:active {
+    color: #ffffff;
+}
+.btn.tall:hover {
+    z-index: 2!important;
+}
+.btn.copytoclipboard {
+    background-color: #c7c7c7;
+-webkit-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.7);
+-moz-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.7);
+box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.7);
+    /*border-right: 1px solid #c0c0c0;*/
+
+}
+.white {color: #ffffff;}
 #genbtn {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+    z-index: 3!important;
+}
+:focus {
+    outline: none!important;
 }
 #final_pass {
     font-family: Georgia;
-    font-size: 48px;
+    font-size: 32px;
+    text-align: center;
+    background-color: #efefef;
+    color: #000000;
+-webkit-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.8);
+-moz-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.8);
+box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.8);
 }
 .txt_password::selection {
   background: #000000;
   color: #ffffff;
 }
 select {background-color:#dfdfdf;}
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}

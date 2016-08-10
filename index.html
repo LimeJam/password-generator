@@ -1,150 +1,115 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>LimeJam Password Generator v1.0.4</title>
+	<title>LimeJam Password Generator v1.0.6</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="/favicon.png?v=3" />
 	<meta name="description" content="Generate Secure Password for your accounts online."> 
-    <meta name="keywords" content="Secure Password Generator, Password Creator, Online Password Generator, Random Password Generator, Strong Password Generator, Create Password, Generate Password, Make Password ">	
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
-    
-
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">-->
-
+    <meta name="keywords" content="Secure Password Generator, Password Creator, Online Password Generator, Random Password Generator, Strong Password Generator, Create Password, Generate Password, Make Password ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/_design/css/custom.css" />
-
     <link rel="image_src" href="/_design/images/thumbnail.png" />
     <script type="text/javascript" src="/_design/js/premutatio.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-    
 </head>
 
 
-<body onload="setPwd();">
-
-
-
-
+<body onload="setPwd();" class="vertical-center">
 <div class="container top-buffer" >
+    <div class="input-group input-group-lg">
 
-<div class="input-group input-group-lg">
-    <div class="btn-group btn-group-lg input-group-btn" role="group">
-        <button id="genbtn" type="button" class="btn btn-default tall" onclick="setPwd();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Generate</button>
-    </div>
-
+        <div class="input-group-btn">
+            <button id="genbtn" type="button" class="btn btn-default tall" onclick="setPwd();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Generate</button>
+            <button class="copytoclipboard btn btn-default tall" type="button" data-clipboard-target="#final_pass">Copy <img src="/_design/images/clippy.svg" width="16"></button>
+        </div>
+        
         <input name="final_pass" id="final_pass" type="text" value="Your new password will be shown here." class="txt_password form-control tall" onclick="this.setSelectionRange(0, this.value.length);">
 
-    <div class="btn-group btn-group-lg input-group-btn" role="group">
-        <button class="copytoclipboard btn btn-default tall" type="button" data-clipboard-target="#final_pass">Copy <img src="/_design/images/clippy.svg" width="16"></button>
     </div>
-</div>
         
-<div class="row top-buffer">
-    <div class="col-xs-6 col-md-6">
-        Password Length:
-    </div>
-    <div class="col-xs-6 col-md-6">
-            <select id="pgLength" class="form-control" title="Select the length of your password.">
-            <optgroup label="Weak">
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-            </optgroup>
-            <optgroup label="Strong">
-                <option value="16" selected="selected">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-                <option value="32">32</option>
-            </optgroup>
-
-            <optgroup label="Unbelievable">
-                <option value="64">64</option>
-                <option value="128">128</option>
-                <option value="256">256</option>
-                <option value="512">512</option>
-                <option value="1024">1024</option>
-                <option value="2048">2048</option>
-            </optgroup>
-
-        </select>
-    </div>
-</div>
-
-<div class="row top-buffer">
-    <div class="col-xs-6 col-md-6">
-        <div class="checkbox">
-            <label><input checked id="Lowercase" name="Lowercase" type="checkbox"> Include Lowercase: ( abcdefgh )</label>
+    <div class="row top-buffer">
+        <div class="col-xs-6 col-md-6 white">
+            Password Length:
         </div>
-        <div class="checkbox">
-            <label><input checked id="Uppercase" name="Uppercase" type="checkbox"> Include Uppercase: ( ABCDEFGH )</label>
-        </div>
-        <div class="checkbox">
-            <label><input checked id="Numbers" name="Numbers" type="checkbox"> Include Numbers: ( 123456 )</label>
+        <div class="col-xs-6 col-md-6">
+                <select id="pgLength" class="form-control" title="Select the length of your password.">
+                <optgroup label="Weak">
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </optgroup>
+                <optgroup label="Strong">
+                    <option value="16" selected="selected">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                </optgroup>
+
+                <optgroup label="Unbelievable">
+                    <option value="64">64</option>
+                    <option value="128">128</option>
+                    <option value="256">256</option>
+                    <option value="512">512</option>
+                    <option value="1024">1024</option>
+                    <option value="2048">2048</option>
+                </optgroup>
+
+            </select>
         </div>
     </div>
-    <div class="col-xs-6 col-md-6">
-        <div class="checkbox">
-            <label><input checked id="Symbols" name="Symbols" type="checkbox"> Include Symbols: ( @#$% )</label>
+
+    <div class="row top-buffer white">
+        <div class="col-xs-12 col-md-6">
+            <div class="checkbox">
+                <label><input checked id="Lowercase" name="Lowercase" type="checkbox"> <strong>Lowercase:</strong> abcdefgh</label>
+            </div>
+            <div class="checkbox">
+                <label><input checked id="Uppercase" name="Uppercase" type="checkbox"> <strong>Uppercase:</strong> ABCDEFGH</label>
+            </div>
+            <div class="checkbox">
+                <label><input checked id="Numbers" name="Numbers" type="checkbox"> <strong>Numbers:</strong> 123456789</label>
+            </div>
         </div>
-        <div class="checkbox">
-            <label><input id="Alike" name="Alike" type="checkbox"> Include Alike: ( i, l, 1, L, o, 0, O )</label>
-        </div>
-        <div class="checkbox">
-            <label><input id="Ambiguous" name="Ambiguous" type="checkbox"> Include Ambiguous: ( { } [ ] ( ) / \ ' " ` ~ , ; : . < > )</label>
+        <div class="col-xs-12 col-md-6">
+            <div class="checkbox">
+                <label><input checked id="Symbols" name="Symbols" type="checkbox"> <strong>Symbols:</strong> @#$%</label>
+            </div>
+            <div class="checkbox">
+                <label><input id="Alike" name="Alike" type="checkbox"> <strong>Alike:</strong> i, l, 1, L, o, 0, O</label>
+            </div>
+            <div class="checkbox">
+                <label><input id="Ambiguous" name="Ambiguous" type="checkbox"> <strong>Ambiguous:</strong> { } [ ] ( ) / \ ' " ` ~ , ; : . < ></label>
+            </div>
         </div>
     </div>
-</div>
-
 </div><!-- eo container -->
 
+<script>var clipboard = new Clipboard('.copytoclipboard');</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 
-    <script>
-        var clipboard = new Clipboard('.copytoclipboard');
-
-        clipboard.on('success', function (e) {
-            console.info('Action:', e.action);
-            console.info('Text:', e.text);
-            console.info('Trigger:', e.trigger);
-
-            $('[data-toggle="tooltip"]').tooltip();
-
-        });
-    </script>
-    
-    
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-
-    
-
-
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-2918941-40', 'auto');
-  ga('send', 'pageview');
-
-    </script>
-
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-2918941-40', 'auto');
+ga('send', 'pageview');
+</script>
 </body> 
 </html>
