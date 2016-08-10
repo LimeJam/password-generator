@@ -1,17 +1,20 @@
 # LimeJam Password Generator
 LimeJam Password Generator is the simple dictionary premutation script, <a href="https://password.limejam.com/">available</a> online to generate strong passwords for any online account types. Currenty the dictionary consist of the following blocks: 
-* Lowercase: abcdefgh
-* Uppercase: 
-* Numbers: 123456789
-* Symbols: @#$%
-* Alike: i, l, 1, L, o, 0, O
-* Ambiguous: { } \[ ] ( ) / \ ' " ` ~ , ; : . < >
+* Lowercase: abcdefghjkmnpqrstuvwxyz
+* Uppercase: ABCDEFGHJKLMNPQRSTUVWXYZ
+* Numbers: 23456789
+* Symbols: !#$%&*+-=?@^_
+* Alike: ilo|IO01
+* Ambiguous: {}\[]()\/'\"`~,;:.<>\\
 
 To use the Password Generator, simply add the premutatio.js to your project and use premutatio(pgLength,dictionary) function, supplying it with desired password length and dictionary string respectively.
 
 Add javascript
+
     <script type="text/javascript" src="/src/js/premutatio.js"></script>
-Define dictionary variable (in the demo the dictionary is defined by dictionary() function)     
+
+Define dictionary variable (in the demo the dictionary is defined by dictionary() function)  
+
     function dictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous) {
         var dictionary = "";
 
@@ -25,5 +28,7 @@ Define dictionary variable (in the demo the dictionary is defined by dictionary(
 
         return dictionary
     }
+
 Generate the password
+
     var password = premutatio(pgLength,dictionary);
