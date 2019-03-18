@@ -41,7 +41,7 @@ body{background-color: #000000; color: #000000;}
 }
 .white {color: #ffffff;}
 #genbtn {
-
+    padding: 0 50px;
     z-index: 3!important;
 }
 #genbtn:hover {
@@ -52,7 +52,7 @@ body{background-color: #000000; color: #000000;}
 }
 #final_pass {
     font-family: Georgia;
-    font-size: 24px;
+    font-size: 32px;
     text-align: center;
     background-color: #efefef;
     color: #000000;
@@ -66,9 +66,12 @@ body{background-color: #000000; color: #000000;}
 }
 select {background-color:#dfdfdf;}
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
 
-  display: flex;
   align-items: center;
+}
+#characters label {
+    border-bottom: 1px dotted transparent;
+}
+#characters label:hover {
+    border-bottom: 1px dotted #b6ff00;
 }
