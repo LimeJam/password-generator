@@ -8,45 +8,21 @@ charactersJSON = {
 }
 
 
-function computeSetRepeat(set, charactersJSON) {
-/**
- *  computeFraction(set, charactersJSON) {
- * set - string
- * charactersJSON -  JSON with key:value pairs of character sets
-*/
-    //safe defaults
-    if (typeof(set)==='undefined') {
-        return ""
-    }
-    else {
-        var denominator = 1;
-        for (var i in charactersJSON) {
-            denominator*=charactersJSON[i].length;
-
-            console.log(charactersJSON[i]);
-            console.log(denominator);
-        }
-        var repeat = Math.floor(denominator/set.length);
-
-        var setRepeat = "";
-        for (var j = 0; j<repeat; i++) {
-            setRepeat+=set;
-        }
-
-        return setRepeat
-    }
-}
-function computeDictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous,balanced) {
+function computeBalancedDictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous) {
     var dictionary = "";
 
-    if (Lowercase) {dictionary+="abcdefghjkmnpqrstuvwxyzabcdefghjkmnpqrstuvwxyz";}
-    if (Uppercase) {dictionary+="ABCDEFGHJKLMNPQRSTUVWXYZABCDEFGHJKLMNPQRSTUVWXYZ";}
-    if (Numbers) {dictionary+="234567892345678923456789234567892345678923456789";}
-    if (Symbols) {dictionary+="!#$%&*+-=?@^_!#$%&*+-=?@^_!#$%&*+-=?@^_!#$%&*+-=?@^_";}
-    if (Alike) {dictionary+="ilo|IO01ilo|IO01ilo|IO01ilo|IO01ilo|IO01ilo|IO01ilo|IO01";}
-    if (Ambiguous) {dictionary+="{}[]()\/'\"`~,;:.<>\\{}[]()\/'\"`~,;:.<>\\{}[]()\/'\"`~,;:.<>\\";}
+    // number >= 30 is OK for an alphabet length to achieve balanced dictionary
 
-    return dictionary
+    if (Lowercase) {dictionary+=premutatio(30,charactersJSON.Lowercase);}
+    if (Uppercase) {dictionary+=premutatio(30,charactersJSON.Uppercase);}
+    if (Numbers) {dictionary+=premutatio(30,charactersJSON.Numbers);}
+    if (Symbols) {dictionary+=premutatio(30,charactersJSON.Symbols);}
+    if (Alike) {dictionary+=premutatio(30,charactersJSON.Alike);}
+    if (Ambiguous) {dictionary+=premutatio(30,charactersJSON.Ambiguous);}
+
+    var balancedDictionary = premutatio(dictionary.length,dictionary);
+
+    return balancedDictionary
 }
 
 function premutatio(pgLength,dictionary) {
@@ -57,6 +33,7 @@ function premutatio(pgLength,dictionary) {
     }
     // if no character set is selected
     if (dictionary == '') {return "Please select at least one character set"}
+    
     return premutatio
 }
 
@@ -87,10 +64,8 @@ function setPwd() {
         Ambiguous = true;
     }
 
-    //commented out due to poor performance computeSetRepeat("abc",charactersJSON);
-
     var pgLength = document.getElementById("pgLength").value;
-    var dictionary = computeDictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous);
+    var balancedDictionary = computeBalancedDictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous);
 
-    document.getElementById("final_pass").value = premutatio(pgLength,dictionary);
+    document.getElementById("final_pass").value = premutatio(pgLength,balancedDictionary);
 }
