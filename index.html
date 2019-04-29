@@ -1,17 +1,27 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>LimeJam Password Generator v1.0.8</title>
+	<title>LimeJam Password Generator v1.0.9</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="/favicon.png?v=3" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/icons/favicon-16x16.png">
+    <link rel="manifest" href="/src/icons/site.webmanifest">
+    <link rel="mask-icon" href="/src/icons/safari-pinned-tab.svg" color="#2e2e2e">
+    <link rel="shortcut icon" href="/src/icons/favicon.ico?v=4">
+    <meta name="msapplication-TileColor" content="#2e2e2e">
+    <meta name="msapplication-config" content="/src/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
 	<meta name="description" content="Generate Secure Password for your accounts online."> 
     <meta name="keywords" content="Secure Password Generator, Password Creator, Online Password Generator, Random Password Generator, Strong Password Generator, Create Password, Generate Password, Make Password ">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/src/css/custom.css" />
     <link rel="image_src" href="/src/images/thumbnail.png" />
     <script type="text/javascript" src="/src/js/premutatio.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 </head>
 
 
@@ -21,7 +31,7 @@
 
         <div class="input-group-btn">
             <button id="genbtn" type="button" class="btn btn-default tall" onclick="setPwd();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Generate</button>
-            <button class="copytoclipboard btn btn-default tall" type="button" data-clipboard-target="#final_pass">Copy <img src="/src/images/clippy.svg" width="16"></button>
+            <button id="copybtn" class="btn btn-default tall" type="button" data-clipboard-target="#final_pass">Copy <img src="/src/images/clipboard.svg" width="22" style="vertical-align:baseline"></button>
         </div>
         
         <input name="final_pass" id="final_pass" type="text" value="Your new password will be shown here." class="txt_password form-control tall" onclick="this.setSelectionRange(0, this.value.length);">
@@ -99,9 +109,12 @@
     </div>
 </div><!-- eo container -->
 
-<script>var clipboard = new Clipboard('.copytoclipboard');</script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script>var clipboard = new ClipboardJS('.btn');</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -10,6 +10,11 @@
 body{background-color: #000000; color: #000000;}
 .top-buffer { margin-top:2em; }
 
+
+
+
+
+
 .btn-group > .input-group {
     float: left;
 }
@@ -20,7 +25,7 @@ body{background-color: #000000; color: #000000;}
     background-color: #b6ff00;
     font-family: 'LeagueGothicRegular';
     text-transform: uppercase;
-    /*z-index: 2!important;*/
+    font-size: 1.6rem;
 }
 .btn.tall:active {
     color: #333333;
@@ -28,25 +33,32 @@ body{background-color: #000000; color: #000000;}
 .btn.tall:hover {
     z-index: 2!important;
 }
-.btn.copytoclipboard {
-    background-color: #c7c7c7;
-    -webkit-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.7);
-    -moz-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.7);
-    box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.7);
-    /*border-right: 1px solid #c0c0c0;*/
+#copybtn {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    margin-right: -10px!important;
+    position: relative;
+    border-top-left-radius: 0.3rem!important;
+    z-index: 5!important; 
+
 
 }
-.btn.copytoclipboard:hover {
-    background-color: #a5a5a5;
+#copybtn:hover {
+    background-color: #454545;
+    z-index: 5!important; 
 }
-.white {color: #ffffff;}
 #genbtn {
-    padding: 0 50px;
     z-index: 3!important;
 }
 #genbtn:hover {
-    background-color: #A8DD03;
+    background-color: #a6e800;
 }
+
+
+
+
+.white {color: #ffffff;}
+
 :focus {
     outline: none!important;
 }
@@ -56,22 +68,46 @@ body{background-color: #000000; color: #000000;}
     text-align: center;
     background-color: #efefef;
     color: #000000;
-    -webkit-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.8);
-    -moz-box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.8);
-    box-shadow: inset 10px 0px 10px -9px rgba(0,0,0,0.8);
+    border-radius: .3rem;
 }
 .txt_password::selection {
-  background: #000000;
-  color: #ffffff;
+    background: #000000;
+    color: #ffffff;
 }
 select {background-color:#dfdfdf;}
 .vertical-center {
-
-  align-items: center;
+    align-items: center;
 }
+
+
+
+
+
 #characters label {
-    border-bottom: 1px dotted transparent;
+    display: inline-block;
+    position: relative;
+    padding: 0 4px 0 6px;
+        margin: 0 0 0 -8px;
 }
 #characters label:hover {
-    border-bottom: 1px dotted #b6ff00;
+    background-color: #333333;
 }
+#characters label::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #b6ff00;
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#characters label:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
