@@ -7,13 +7,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
 body{background-color: #000000; color: #000000;}
+
 .top-buffer { margin-top:2em; }
-
-
-
-
-
 
 .btn-group > .input-group {
     float: left;
@@ -33,6 +30,12 @@ body{background-color: #000000; color: #000000;}
 .btn.tall:hover {
     z-index: 2!important;
 }
+#genbtn {
+    z-index: 3!important;
+}
+#genbtn:hover {
+    background-color: #a6e800;
+}
 #copybtn {
     background-color: #2e2e2e;
     color: #ffffff;
@@ -47,30 +50,24 @@ body{background-color: #000000; color: #000000;}
     background-color: #454545;
     z-index: 5!important; 
 }
-#genbtn {
-    z-index: 3!important;
-}
-#genbtn:hover {
-    background-color: #a6e800;
-}
 
 
 
 
 .white {color: #ffffff;}
 
-:focus {
-    outline: none!important;
+textarea:focus, input:focus{
+    outline: none;
 }
 #final_pass {
     font-family: Georgia;
-    font-size: 32px;
+    font-size: 2rem;
     text-align: center;
     background-color: #efefef;
     color: #000000;
     border-radius: .3rem;
 }
-.txt_password::selection {
+#final_pass::selection {
     background: #000000;
     color: #ffffff;
 }
@@ -80,14 +77,13 @@ select {background-color:#dfdfdf;}
 }
 
 
-
-
-
 #characters label {
     display: inline-block;
     position: relative;
-    padding: 0 4px 0 6px;
-        margin: 0 0 0 -8px;
+    padding: 0 4px 2px 6px;
+    margin: 8px 0 0 -8px;
+    border-radius: .1rem;
+    cursor: pointer;
 }
 #characters label:hover {
     background-color: #333333;
@@ -97,17 +93,24 @@ select {background-color:#dfdfdf;}
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
+    height: 0px;
     bottom: 0;
     left: 0;
+    border-radius: .1rem;
     background-color: #b6ff00;
     transform-origin: bottom right;
     transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
-
 #characters label:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
-
+#characters label span {
+    font-family: Georgia;
+}
+input[type=checkbox]:checked + strong + span {
+    color: #b6ff00;
+  } 
+#characters label:hover span {
+    color: #b6ff00;
+}
