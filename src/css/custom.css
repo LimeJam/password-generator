@@ -56,9 +56,6 @@ body{background-color: #000000; color: #000000;}
 
 .white {color: #ffffff;}
 
-textarea:focus, input:focus{
-    outline: none;
-}
 #final_pass {
     font-family: Georgia;
     font-size: 2rem;
@@ -86,31 +83,24 @@ select {background-color:#dfdfdf;}
     cursor: pointer;
 }
 #characters label:hover {
-    background-color: #333333;
-}
-#characters label::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 0px;
-    bottom: 0;
-    left: 0;
-    border-radius: .1rem;
-    background-color: #b6ff00;
-    transform-origin: bottom right;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-}
-#characters label:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    background-color: #2e2e2e;
 }
 #characters label span {
     font-family: Georgia;
+    color: #454545;
 }
-input[type=checkbox]:checked + strong + span {
+#characters label strong {
+    color: #454545;
+}
+#characters input[type=checkbox]:checked + strong {
+    color: #ffffff;
+} 
+#characters input[type=checkbox]:checked + strong + span {
     color: #b6ff00;
-  } 
+} 
+#characters label:hover strong {
+    color: #ffffff;
+}
 #characters label:hover span {
     color: #b6ff00;
 }

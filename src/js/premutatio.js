@@ -32,13 +32,14 @@ function premutatio(pgLength,dictionary) {
         premutatio+=dictionary[Math.floor(Math.random() * dictionary.length)];
     }
     // if no character set is selected
-    if (dictionary == '') {return "Please select at least one character set"}
+    if (dictionary == "") {return "Please select at least one character set"}
     
     return premutatio
 }
 
 //computed onLoad
 function setPwd() {
+    var pwdValue = "";
     var Lowercase = false;
     if (document.getElementById("Lowercase").checked) {
         Lowercase = true;
@@ -64,8 +65,14 @@ function setPwd() {
         Ambiguous = true;
     }
 
-    var pgLength = document.getElementById("pgLength").value;
-    var balancedDictionary = computeBalancedDictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous);
-
-    document.getElementById("final_pass").value = premutatio(pgLength,balancedDictionary);
+    if (!Lowercase && !Uppercase && !Numbers && !Symbols && !Alike && !Ambiguous) {
+        pwdValue = "Please select at least one character set";
+    }
+    else {
+        var pgLength = document.getElementById("pgLength").value;
+        var balancedDictionary = computeBalancedDictionary(Lowercase,Uppercase,Numbers,Symbols,Alike,Ambiguous);
+        pwdValue = premutatio(pgLength,balancedDictionary);
+    }
+    
+    document.getElementById("final_pass").value = pwdValue;
 }
