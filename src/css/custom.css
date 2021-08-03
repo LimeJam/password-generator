@@ -8,7 +8,9 @@
   font-style: normal;
 }
 
-body{background-color: #000000; color: #000000;}
+body{
+    background-color: #000000; color: #000000;
+}
 
 .top-buffer { margin-top:2em; }
 
